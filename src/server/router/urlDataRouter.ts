@@ -26,30 +26,3 @@ export const urlRouterData = createRouter()
     },
   })
 
-  .mutation("redirect", {
-    input: z.object({
-      shortUrl: z.string(),
-    }),
-    async resolve({ input, ctx }) {
-      try {
-        const data = await ctx.prisma.urlData.findFirst({
-          where: {
-            shortUrl: input.shortUrl,
-          },
-        });
-        if (data) {
-          // const longUrl = data.url as string;
-
-          return {
-            data: "I did it",
-          };
-        } else {
-          return {
-            error: "No url found",
-          };
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-  });

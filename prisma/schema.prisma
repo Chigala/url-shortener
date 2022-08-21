@@ -17,14 +17,25 @@ model Example {
 }
 
 model UrlData {
-  id        String   @id @default(cuid())
-  url       String?
-  shortUrl  String?
-  visits    Int      @default(0)
-  createdAt DateTime @default(now())
-  location  String?
-  user      User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id        String     @id @default(cuid())
+  url       String? 
+  shortUrl  String     @unique
+  visits    Int        @default(0)
+  createdAt DateTime   @default(now())
+  user      User?       @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId    String?
+  location  Location[]
+}
+
+model Location {
+  id        String  @id @default(cuid())
+  country   String?
+  city      String?
+  userAgent String?
+  latitude  Float?
+  longitude Float?
+  urlData   UrlData @relation(fields: [urlDataId], references: [id], onDelete: Cascade)
+  urlDataId String
 }
 
 // Necessary for Next auth
