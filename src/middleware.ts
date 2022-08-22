@@ -1,4 +1,3 @@
-import { UrlData } from "./../node_modules/.prisma/client/index.d";
 import { NextRequest, NextResponse, userAgent } from "next/server";
 
 export async function middleware(req: NextRequest) {
@@ -20,7 +19,6 @@ export async function middleware(req: NextRequest) {
   }
 
   const data = await fetchSlug.json();
-  console.log("this is the data", data);
 
   if (data.url) {
     //this increment the visits by 1

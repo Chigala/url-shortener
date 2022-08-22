@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "db-studio": "npx prisma studio",
+    "format": "npx prettier --write ."
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.4",
@@ -26,6 +28,9 @@
     "zod": "^3.18.0"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.4",
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
     "@types/react-dom": "18.0.5",
@@ -35,6 +40,8 @@
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
     "postcss": "^8.4.16",
+    "prettier": "2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "prisma": "^4.2.1",
     "tailwindcss": "^3.1.8",
     "typescript": "4.7.4"
