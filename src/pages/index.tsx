@@ -1,23 +1,15 @@
-import { ReactElement } from "react";
-import { trpc } from "../utils/trpc";
-import { NextPageWithLayout } from "./_app";
-import Sidebar from "../components/sidebar";
+import React from "react";
 import Layout from "../components/layout";
+import { trpc } from "../utils/trpc";
 
-const Home: NextPageWithLayout = () => {
+const Home: React.FC = () => {
   const hello = trpc.useQuery(["example.hello", { text: "from chigala" }]);
 
   return (
-    <>
-      <h1>{hello.data?.greeting}</h1>
-    </>
+    <Layout>
+      <h1 className="text-black dark:text-white">{hello.data?.greeting}</h1>
+    </Layout>
   );
 };
-
-Home.getLayout = (page: ReactElement) => (
-  <Layout>
-    <Sidebar>{page}</Sidebar>
-  </Layout>
-);
 
 export default Home;

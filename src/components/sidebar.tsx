@@ -1,13 +1,13 @@
-import React from 'react'
-import { LayoutProps } from './layout'
+import React from "react";
+import { LayoutProps } from "./layout";
 
-const Sidebar = ({children}:LayoutProps) => {
+const Sidebar = ({ children }: LayoutProps) => {
   return (
-    <div className='flex-row flex'>
-    <p>the sidebar</p>
-        <div>{children}</div>
+    <div className="flex flex-row">
+      <p>the sidebar</p>
+      <main>{children}</main>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
