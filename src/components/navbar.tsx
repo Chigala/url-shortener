@@ -143,19 +143,14 @@ const Modal = () => {
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
-  //   const [mounted, setMounted] = useState(false);
-  //   useEffect(() => setMounted(true), []);
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
 
-  //   if (!mounted) return null;
+    if (!mounted) return null;
   return (
     <div className="flex flex-col gap-y-5 border-b border-gray-300 px-9 py-2 text-base text-black dark:text-white">
       <div className="flex items-center justify-between ">
         <div className="flex flex-row items-center">
-          {theme === "dark" ? (
-            <BsLightningCharge className="mr-4 text-4xl" />
-          ) : (
-            <BsLightningCharge className="mr-4 text-4xl text-black" />
-          )}
           <div className="flex flex-row items-center gap-x-4">
             <div className="h-12 w-12 rounded-full bg-black dark:bg-gray-300"></div>
             <div className="flex flex-row items-center gap-x-2">
@@ -181,12 +176,6 @@ const Navbar = () => {
           </div>
           <AiOutlineSetting className="text-2xl text-black dark:text-white" />
         </div>
-      </div>
-      <div className="space-x-4">
-        <a href="">Dashboard</a>
-        <a href="">Links</a>
-        <a href="">Page-Links</a>
-        <a href="">Setting</a>
       </div>
     </div>
   );

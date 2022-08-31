@@ -35,15 +35,15 @@ const LinkInputField: React.FC = () => {
   };
 
   return (
-    <form className="space-y-6 rounded-lg border border-gray-400 px-3 py-4 text-black ">
-      <div className="flex flex-col">
+    <form className="space-y-6 rounded-lg py-7 shadow-lg px-5 text-black ">
+      <div className="flex flex-col py-2">
         <label htmlFor="button-label">Button label</label>
         <input
           type="text"
           placeholder="ex. My webpage"
           aria-label="button-label"
           id="button-label"
-          className="rounded-md focus:border-black focus:ring-black"
+          className="rounded-md placeholder:text-xs focus:border-black focus:ring-black"
         />
       </div>
       <div className="flex flex-col">
